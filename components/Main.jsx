@@ -1,10 +1,11 @@
-import {useState} from "react";
+import { useState } from "react"
 
 export default function Main() {
-
-    const [topText,setTopText] = useState("Walk into Mordor")
-    const [bottomText,setBottomText] = useState("One does not simply")
-    const [imageURL,setImageURL] = useState("http://i.imgflip.com/1bij.jpg")
+    const [meme, setMeme] = useState({
+        topText: "One does not simply",
+        bottomText: "Walk into Mordor",
+        imageUrl: "http://i.imgflip.com/1bij.jpg"
+    })
 
     return (
         <main>
@@ -27,9 +28,9 @@ export default function Main() {
                 <button>Get a new meme image 🖼</button>
             </div>
             <div className="meme">
-                <img src={imageURL} />
-                <span className="top">{bottomText}</span>
-                <span className="bottom">{topText}</span>
+                <img src={meme.imageUrl} />
+                <span className="top">{meme.topText}</span>
+                <span className="bottom">{meme.bottomText}</span>
             </div>
         </main>
     )
