@@ -7,8 +7,8 @@ export default function Main() {
         imageUrl: "http://i.imgflip.com/1bij.jpg"
     })
 
-    function handleChange(event,name){
-        const {value} = event.currentTarget
+    function handleChange(event){
+        const {value,name} = event.currentTarget
         setMeme(prevState => ({
             ...prevState,
             [name]: value
