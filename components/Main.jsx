@@ -30,7 +30,7 @@ export default function Main() {
         const {value,name} = event.currentTarget
         setMeme(prevState => ({
             ...prevState,
-            [name]: value
+            [name]: value //toptext:name
         }))
     }
 
