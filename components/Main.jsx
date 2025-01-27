@@ -25,6 +25,7 @@ export default function Main() {
         }))
     }
 
+    //aka CONTROLLED COMPONENTS
     function handleChange(event){
         const {value,name} = event.currentTarget
         setMeme(prevState => ({
