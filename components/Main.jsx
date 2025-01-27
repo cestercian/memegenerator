@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 
+
 export default function Main() {
     const [meme, setMeme] = useState({
         topText: "One does not simply",
@@ -14,13 +15,15 @@ export default function Main() {
             .then(data => setAllMemes(data.data.memes))
     }, [])
 
-    /**
-     * Challenge: Get a random image from the array of
-     * allMemes when the user clicks the button. Once
-     * you've gotten a random image from the array, make
-     * sure to write the code that will display that
-     * random meme image to the page.
-     */
+
+    function changeImg(){
+        let index = Math.floor(Math.random()*allMemes.length)
+        const randomMeme = allMemes[index] // Get a random meme
+        setMeme(prevMeme => ({
+            ...prevMeme,
+            imageUrl: randomMeme.url // Update the meme image
+        }))
+    }
 
     function handleChange(event){
         const {value,name} = event.currentTarget
@@ -52,10 +55,10 @@ export default function Main() {
                         value={meme.bottomText}
                     />
                 </label>
-                <button>Get a new meme image 🖼</button>
+                <button onClick={changeImg}>Get a new meme image 🖼</button>
             </div>
             <div className="meme">
-                <img src={meme.imageUrl} />
+                <img src={meme.imageUrl} alt="imageURL"/>
                 <span className="top">{meme.topText}</span>
                 <span className="bottom">{meme.bottomText}</span>
             </div>
