@@ -1,4 +1,3 @@
-Here's an updated and properly structured `README.md` file for your **Meme Generator** app:
 
 ```md
 # 🖼 Meme Generator
